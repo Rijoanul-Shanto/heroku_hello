@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django',
     'greetings',
     'rest_framework',
+    'home'
 ]
 
 MIDDLEWARE = [
