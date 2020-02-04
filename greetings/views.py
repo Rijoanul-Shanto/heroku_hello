@@ -12,6 +12,7 @@ class HelloView(APIView):
     @staticmethod
     def get(request, name):
         data = {"name": name}
+        print("this is : ", data)
         serializer = GreetingsSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
@@ -24,5 +25,6 @@ class GreetingsView(APIView):
     @staticmethod
     def get(request):
         greetings = Greetings.objects.all()
+        print("found : ", greetings)
         serializer = GreetingsSerializer(greetings, many=True)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
