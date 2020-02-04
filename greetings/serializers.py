@@ -1,0 +1,8 @@
+from rest_framework import serializers
+from greetings.models import Greetings
+
+
+class GreetingsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Greetings
+        fields = '__all__'
